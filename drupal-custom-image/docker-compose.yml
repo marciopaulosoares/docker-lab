@@ -13,13 +13,15 @@ services:
       - drupal-profiles:/var/www/html/profiles
       - drupal-sites:/var/www/html/sites
       - drupal-themes:/var/www/html/themes
-      - drupal-data:/var/lib/postgresql/data
+      
   postgres:
     image: postgres:12
     environment:
-    - POSTGRES_PASSWORD=123456
-    - POSTGRES_DB=drupal
-    - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=drupal
+      - POSTGRES_USER=user
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
 volumes:
   drupal-modules:
   drupal-profiles:
