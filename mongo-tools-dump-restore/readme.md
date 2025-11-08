@@ -20,11 +20,11 @@ docker exec -it mongo-tools bash
 
 ## Run the commands
 
-mongodump --uri="mongodb+srv://<user>:<pass>@<mongodb>.mongodb.net/<dbname>" \
-  --out=/data/backup/<dbname>-dump
+mongodump --uri="mongodb+srv://[user]:[pass]@[my-mongodb].mongodb.net/[dbname]" \
+  --out=/data/backup/[dbname]-dump
 
-mongorestore --uri="mongodb+srv://<user>:<pass>@<mongodb>.mongodb.net/" \
-  --nsInclude=<dbname>.* /data/backup/<dbname>-dump
+mongorestore --uri="mongodb+srv://[user]:[pass]@[my-mongodb].mongodb.net/" \
+  --nsInclude=[dbname].* /data/backup/[dbname]-dump
 
 ## Summary
 
