@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mongo-tools:
+    image: mongo:7.0
+    container_name: mongo-tools
+    entrypoint: tail -f /dev/null   # Keeps container running
+    volumes:
+      - ./backups:/data/backup      # Maps local ./backups folder to container
+    networks:
+      - mongo-net
+
+networks:
+  mongo-net:
+    driver: bridge
